@@ -188,3 +188,17 @@ body{
   margin-top: 20px;
 }
 
+
+
+/*Day*/
+.container{
+  padding-top: 100px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: chartreuse;
+  width:340px;
+  padding: 10px;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transperent,#0004);
+}

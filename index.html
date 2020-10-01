@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload = "renderTime();">
   <div class="clock">
     <div class="circle">
         <div class="hour">
@@ -47,6 +47,8 @@
     <div id="seconds"></div>
     <div id="ampm"></div>
   </div>
+
+  <div id="clockDisplay" class="container"></div>
 
 
   <script>
@@ -91,6 +93,26 @@
         seconds.innerHTML = s+"&nbsp";
         ampm.innerHTML = am;
        })
+
+
+        /*For day,date*/
+       function renderTime(){
+          var mydate = new Date();
+          var year = mydate.getFullYear();
+          var day = mydate.getDay();
+          var month = mydate.getMonth();
+          var daym = mydate.getDate();
+          var dayarray = new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+          var montharray = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec");
+
+          var myClock = document.getElementById("clockDisplay");
+          myClock.textContent = "" +dayarray[day]+ " " +daym+ " " +montharray[month]+ " " +year;
+          myClock.innerText = "" +dayarray[day]+ " " +daym+ " " +montharray[month]+ " " +year;
+
+          setTimeout("renderTime()", 1000);
+       }
+
+renderTime();
   </script>
 </body>
 </html>
